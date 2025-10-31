@@ -11,6 +11,7 @@
 ## 🌐 Socials
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discordapp.com/users/1387348547308883968)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rohitpandey08)
+[![Monkeytype](https://img.shields.io/badge/Monkeytype-%23000000.svg?style=for-the-badge&logo=monkeytype&logoColor=yellow)](https://monkeytype.com/profile/__Rohit__)
 
 ---
 
