@@ -1,0 +1,33 @@
+name: Update profile panels
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"      # every 6 hours
+  workflow_dispatch:             # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build stats, typing and activity panels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_LOGIN: rop2024
+          MONKEYTYPE_USER: __Rohit__
+        run: python scripts/build_dynamic.py
+
+      - name: Commit changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats.svg assets/activity.svg assets/monkeytype.svg
+          git diff --cached --quiet || (git commit -m "chore: refresh profile panels" && git push)
